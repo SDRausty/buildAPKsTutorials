@@ -8,5 +8,5 @@ cd buildAPKs
 git submodule init
 git submodule update sources/tutorials
 echo "Run the following command to build these APKs."
-./sources/tutorials/buildTutorials.sh
+./sources/buildTutorials.sh
 ```
