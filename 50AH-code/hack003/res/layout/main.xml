@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2012 Manning
+  See the file license.txt for copying permission.
+-->
+<FrameLayout xmlns:cascade="http://schemas.android.com/apk/res/com.manning.androidhacks.hack003"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <com.manning.androidhacks.hack003.view.CascadeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        cascade:horizontal_spacing="30dp"
+        cascade:vertical_spacing="20dp" >
+
+        <View
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            cascade:layout_vertical_spacing="90dp"
+            android:background="#FF0000" />
+
+        <View
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:background="#00FF00" />
+
+        <View
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:background="#0000FF" />
+    </com.manning.androidhacks.hack003.view.CascadeLayout>
+
+</FrameLayout>

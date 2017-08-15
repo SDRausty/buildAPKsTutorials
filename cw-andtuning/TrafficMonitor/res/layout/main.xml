@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<TableLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/table" android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+		<Button android:text="Take Snapshot" android:onClick="takeSnapshot" />
+		<TableRow>
+			<TextView android:layout_column="1"
+				android:text="@string/received" android:layout_gravity="right" android:textSize="20sp"/>
+			<TextView android:text="@string/sent" android:layout_gravity="right" android:textSize="20sp"/>
+		</TableRow>
+		<TableRow>
+			<TextView
+				android:gravity="right" android:text="@string/latest"
+				android:textStyle="bold" android:layout_marginRight="@dimen/margin_right" android:textSize="20sp"/>
+			<TextView android:id="@+id/latest_rx" android:gravity="right" android:layout_marginRight="@dimen/margin_right" android:textSize="20sp"/>
+			<TextView android:id="@+id/latest_tx" android:gravity="right" android:textSize="20sp"/>
+		</TableRow>
+		<TableRow>
+			<TextView
+				android:gravity="right" android:text="@string/previous"
+				android:textStyle="bold" android:layout_marginRight="@dimen/margin_right" android:textSize="20sp"/>
+			<TextView android:id="@+id/previous_rx" android:gravity="right" android:layout_marginRight="@dimen/margin_right" android:textSize="20sp"/>
+			<TextView android:id="@+id/previous_tx" android:gravity="right" android:textSize="20sp"/>
+		</TableRow>
+		<TableRow>
+			<TextView
+				android:gravity="right" android:text="@string/delta"
+				android:textStyle="bold" android:layout_marginRight="@dimen/margin_right" android:textSize="20sp"/>
+			<TextView android:id="@+id/delta_rx" android:gravity="right" android:layout_marginRight="@dimen/margin_right" android:textSize="20sp"/>
+			<TextView android:id="@+id/delta_tx" android:gravity="right" android:textSize="20sp"/>
+		</TableRow>
+	</TableLayout>
