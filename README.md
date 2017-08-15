@@ -7,5 +7,6 @@ cd && git clone https://github.com/sdrausty/buildAPKs
 cd buildAPKs
 git submodule init
 git submodule update sources/tutorials
-
+echo "Run the following command to build these APKs."
+./sources/tutorials/buildTutorials.sh
 ```
