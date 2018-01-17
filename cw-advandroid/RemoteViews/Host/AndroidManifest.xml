@@ -5,8 +5,8 @@
 	android:versionName="1.0">
 
 	<uses-sdk
-		android:minSdkVersion="7"
-		android:targetSdkVersion="14"/>
+		android:minSdkVersion="14"
+		android:targetSdkVersion="27"/>
 
 	<permission
 		android:name="com.commonsware.android.rv.host.ACT_AS_HOST"

@@ -6,8 +6,8 @@
 					
 	<uses-permission android:name="android.permission.READ_CONTACTS" />
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-	<uses-sdk android:minSdkVersion="3"
-						android:targetSdkVersion="6" />
+	<uses-sdk android:minSdkVersion="14"
+						android:targetSdkVersion="27" />
 	<supports-screens android:largeScreens="true"
 										android:normalScreens="true"
 										android:smallScreens="false" />

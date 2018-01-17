@@ -3,8 +3,8 @@
 	package="com.commonsware.android.actionmodemc">
 
 	<uses-sdk
-		android:minSdkVersion="4"
-		android:targetSdkVersion="11"/>
+		android:minSdkVersion="14"
+		android:targetSdkVersion="27"/>
 
 	<supports-screens
 		android:anyDensity="true"
