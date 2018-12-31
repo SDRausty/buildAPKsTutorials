@@ -1,0 +1,11 @@
+<resources>
+
+	<string name="app_name">Audio Recording Demo</string>
+	<string name="title_activity_main">Audio Recording</string>
+	<string name="record">Record</string>
+	<string name="strange">Something strange happened</string>
+	<string name="max_duration">Maximum duration reached</string>
+	<string name="max_size">Maximum file size reached</string>
+	<string name="msg_sorry">Sorry, but we need permission to continue!</string>
+
+</resources>

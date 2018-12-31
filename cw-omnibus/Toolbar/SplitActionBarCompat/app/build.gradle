@@ -1,0 +1,15 @@
+apply plugin: 'com.android.application'
+
+dependencies {
+    implementation 'com.android.support:appcompat-v7:22.2.1'
+}
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion '26.0.2'
+    
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 22
+    }
+}

@@ -1,0 +1,24 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.hugo'
+
+dependencies {
+    implementation 'com.commonsware.cwac:provider:0.5.1'
+    androidTestImplementation 'com.android.support.test:rules:0.5'
+}
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+
+    defaultConfig {
+        minSdkVersion 26
+        targetSdkVersion 26
+        applicationId 'com.commonsware.android.cp.proxypipe'
+        testApplicationId 'com.commonsware.android.cp.proxypipe.test'
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    aaptOptions {
+        noCompress 'pdf'
+    }
+}

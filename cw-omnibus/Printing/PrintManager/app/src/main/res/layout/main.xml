@@ -1,0 +1,10 @@
+<EditText android:id="@+id/prose"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:gravity="left|top"
+  android:hint="@string/prose_hint"
+  android:inputType="textMultiLine">
+
+  <requestFocus />
+</EditText>

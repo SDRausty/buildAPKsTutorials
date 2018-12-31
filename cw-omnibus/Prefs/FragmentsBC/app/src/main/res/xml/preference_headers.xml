@@ -1,0 +1,14 @@
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<header
+		android:fragment="com.commonsware.android.preffragsbc.EditPreferences$First"
+		android:summary="@string/header1summary"
+		android:title="@string/header1title">
+	</header>
+	<header
+		android:fragment="com.commonsware.android.preffragsbc.EditPreferences$Second"
+		android:summary="@string/header2summary"
+		android:title="@string/header2title">
+	</header>
+
+</preference-headers>

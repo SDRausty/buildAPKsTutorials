@@ -1,0 +1,12 @@
+apply plugin: 'com.android.application'
+
+android {
+  compileSdkVersion 26
+  buildToolsVersion '26.0.2'
+
+  defaultConfig {
+    minSdkVersion 26
+    targetSdkVersion 26
+    applicationId 'com.commonsware.android.pref.store'
+  }
+}

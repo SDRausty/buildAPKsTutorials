@@ -1,0 +1,101 @@
+/***
+  Copyright (c) 2013-2016 CommonsWare, LLC
+  Licensed under the Apache License, Version 2.0 (the "License"); you may not
+  use this file except in compliance with the License. You may obtain a copy
+  of the License at http://www.apache.org/licenses/LICENSE-2.0. Unless required
+  by applicable law or agreed to in writing, software distributed under the
+  License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS
+  OF ANY KIND, either express or implied. See the License for the specific
+  language governing permissions and limitations under the License.
+  
+  Covered in detail in the book _The Busy Coder's Guide to Android Development_
+    https://commonsware.com/Android
+ */
+
+package com.commonsware.android.retrofit;
+
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.ListFragment;
+import android.text.Html;
+import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
+import java.util.List;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
+public class QuestionsFragment extends ListFragment implements
+  Callback<SOQuestions> {
+  public interface Contract {
+    void onQuestion(Item question);
+  }
+
+  @Override
+  public void onCreate(@Nullable Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+
+    setRetainInstance(true);
+  }
+
+  @Override
+  public void onViewCreated(@NonNull View view,
+                            @Nullable Bundle savedInstanceState) {
+    super.onViewCreated(view, savedInstanceState);
+
+    Retrofit retrofit=
+      new Retrofit.Builder()
+        .baseUrl("https://api.stackexchange.com")
+        .addConverterFactory(GsonConverterFactory.create())
+        .build();
+    StackOverflowInterface so=
+      retrofit.create(StackOverflowInterface.class);
+
+    so.questions("android").enqueue(this);
+  }
+
+  @Override
+  public void onListItemClick(ListView l, View v, int position, long id) {
+    Item item=((ItemsAdapter)getListAdapter()).getItem(position);
+
+    ((Contract)getActivity()).onQuestion(item);
+  }
+
+  @Override
+  public void onResponse(Call<SOQuestions> call,
+                         Response<SOQuestions> response) {
+    setListAdapter(new ItemsAdapter(response.body().items));
+  }
+
+  @Override
+  public void onFailure(Call<SOQuestions> call, Throwable t) {
+    Toast.makeText(getActivity(), t.getMessage(),
+      Toast.LENGTH_LONG).show();
+    Log.e(getClass().getSimpleName(),
+      "Exception from Retrofit request to StackOverflow", t);
+  }
+
+  class ItemsAdapter extends ArrayAdapter<Item> {
+    ItemsAdapter(List<Item> items) {
+      super(getActivity(), android.R.layout.simple_list_item_1, items);
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+      View row=super.getView(position, convertView, parent);
+      TextView title=row.findViewById(android.R.id.text1);
+
+      title.setText(Html.fromHtml(getItem(position).title));
+
+      return(row);
+    }
+  }
+}

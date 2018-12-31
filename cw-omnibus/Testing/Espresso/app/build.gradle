@@ -1,0 +1,26 @@
+apply plugin: 'com.android.application'
+
+dependencies {
+    implementation "com.android.support:support-fragment:27.1.1"
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.1'
+}
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 27
+        applicationId "com.commonsware.android.espresso"
+        testApplicationId "com.commonsware.android.espresso.test"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunnerArguments disableAnalytics: 'true'
+    }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+    }
+}

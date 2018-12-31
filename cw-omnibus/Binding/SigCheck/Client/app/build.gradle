@@ -1,0 +1,22 @@
+apply plugin: 'com.android.application'
+
+repositories {
+  maven {
+    url "https://s3.amazonaws.com/repo.commonsware.com"
+  }
+}
+
+dependencies {
+  implementation 'com.android.support:support-fragment:27.1.1'
+  implementation 'com.commonsware.cwac:security:0.8.0'
+}
+
+android {
+  compileSdkVersion 27
+  buildToolsVersion '27.0.3'
+
+  defaultConfig {
+    minSdkVersion 15
+    targetSdkVersion 27
+  }
+}

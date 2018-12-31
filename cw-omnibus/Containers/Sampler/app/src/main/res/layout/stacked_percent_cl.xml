@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <Button android:id="@+id/fifty"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:text="@string/fifty_percent"
+
+    app:layout_constraintHeight_percent="0.50"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <Button android:id="@+id/thirty"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:text="@string/thirty_percent"
+
+    app:layout_constraintHeight_percent="0.30"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/fifty" />
+
+  <Button
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:text="@string/twenty_percent"
+
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/thirty" />
+
+</android.support.constraint.ConstraintLayout>

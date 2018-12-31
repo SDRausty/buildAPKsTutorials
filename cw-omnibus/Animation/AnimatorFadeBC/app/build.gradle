@@ -1,0 +1,10 @@
+apply plugin: 'com.android.application'
+
+dependencies {
+    implementation 'com.nineoldandroids:library:2.4.0'
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion '26.0.2'
+}

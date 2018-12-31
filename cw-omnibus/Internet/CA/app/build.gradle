@@ -1,0 +1,87 @@
+apply plugin: 'com.android.application'
+
+def WARES='"https://wares.commonsware.com/excerpt-7p0.pdf"'
+def SELFSIGNED='"https://scrap.commonsware.com:3001/excerpt-7p0.pdf"'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 27
+    }
+
+    flavorDimensions "default"
+
+    productFlavors {
+        comodo {
+            dimension "default"
+            resValue "string", "app_name", "CA Validation Demo"
+            applicationId "com.commonsware.android.downloader.ca.comodo"
+            manifestPlaceholders=
+                    [networkSecurityConfig: 'network_comodo']
+            buildConfigField "String", "URL", WARES
+        }
+        verisign {
+            dimension "default"
+            resValue "string", "app_name", "Invalid CA Validation Demo"
+            applicationId "com.commonsware.android.downloader.ca.verisign"
+            manifestPlaceholders=
+                    [networkSecurityConfig: 'network_verisign']
+            buildConfigField "String", "URL", WARES
+        }
+        system {
+            dimension "default"
+            resValue "string", "app_name", "System CA Validation Demo"
+            applicationId "com.commonsware.android.downloader.ca.system"
+            manifestPlaceholders=
+                    [networkSecurityConfig: 'network_verisign_system']
+            buildConfigField "String", "URL", WARES
+        }
+        pin {
+            dimension "default"
+            resValue "string", "app_name", "Cert Pin Demo"
+            applicationId "com.commonsware.android.downloader.ca.pin"
+            manifestPlaceholders=
+                    [networkSecurityConfig: 'network_pin']
+            buildConfigField "String", "URL", WARES
+        }
+        invalidPin {
+            dimension "default"
+            resValue "string", "app_name", "Cert Pin Demo"
+            applicationId "com.commonsware.android.downloader.ca.invalidpin"
+            manifestPlaceholders=
+                    [networkSecurityConfig: 'network_invalid_pin']
+            buildConfigField "String", "URL", WARES
+        }
+        selfSigned {
+            dimension "default"
+            resValue "string", "app_name", "Self-Signed Demo"
+            applicationId "com.commonsware.android.downloader.ca.ss"
+            manifestPlaceholders=
+                    [networkSecurityConfig: 'network_selfsigned']
+            buildConfigField "String", "URL", SELFSIGNED
+        }
+        override {
+            dimension "default"
+            resValue "string", "app_name", "Debug Override Demo"
+            applicationId "com.commonsware.android.downloader.ca.debug"
+            manifestPlaceholders=
+                    [networkSecurityConfig: 'network_override']
+            buildConfigField "String", "URL", SELFSIGNED
+        }
+    }
+}
+
+repositories {
+    maven {
+        url "https://s3.amazonaws.com/repo.commonsware.com"
+    }
+}
+
+dependencies {
+    implementation 'com.android.support:support-v13:27.0.2'
+    implementation 'com.commonsware.cwac:provider:0.5.3'
+    implementation 'com.commonsware.cwac:netsecurity:0.4.4'
+}

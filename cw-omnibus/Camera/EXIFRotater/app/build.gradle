@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '26.0.2'
+
+    defaultConfig {
+        applicationId "com.commonsware.android.exif"
+        minSdkVersion 19
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "default"
+
+    productFlavors {
+        image {
+            dimension "default"
+            buildConfigField "boolean", "ROTATE_BITMAP", "false"
+        }
+        matrix {
+            dimension "default"
+            buildConfigField "boolean", "ROTATE_BITMAP", "true"
+        }
+    }
+}
+
+dependencies {
+    implementation 'it.sephiroth.android.exif:library:1.0.1'
+    implementation 'org.greenrobot:eventbus:3.0.0'
+}

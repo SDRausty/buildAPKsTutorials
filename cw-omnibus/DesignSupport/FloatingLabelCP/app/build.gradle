@@ -1,0 +1,22 @@
+apply plugin: 'com.android.application'
+
+repositories {
+  maven {
+    url "https://s3.amazonaws.com/repo.commonsware.com"
+  }
+}
+
+dependencies {
+  implementation 'com.commonsware.cwac:crossport:0.2.0'
+}
+
+android {
+  compileSdkVersion 26
+  buildToolsVersion '26.0.2'
+
+  defaultConfig {
+    minSdkVersion 21
+    targetSdkVersion 26
+    applicationId 'com.commonsware.android.design.til'
+  }
+}

@@ -1,0 +1,26 @@
+apply plugin: 'com.android.application'
+
+repositories {
+    maven {
+        url "https://s3.amazonaws.com/repo.commonsware.com"
+    }
+}
+
+dependencies {
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.commonsware.cwac:provider:0.4.2'
+}
+
+android {
+    compileSdkVersion 24
+
+    defaultConfig {
+        applicationId "com.commonsware.android.dragdrop.compat"
+        minSdkVersion 23
+        targetSdkVersion 24
+    }
+
+    aaptOptions {
+        noCompress 'jpg'
+    }
+}
