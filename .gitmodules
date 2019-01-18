@@ -1,0 +1,3 @@
+[submodule "android-tutorials"]
+	path = android-tutorials
+	url = https://github.com/sdrausty/android-tutorials
