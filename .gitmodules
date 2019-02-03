@@ -1,3 +1,6 @@
 [submodule "android-tutorials"]
 	path = android-tutorials
 	url = https://github.com/fx-adi-lima/android-tutorials
+[submodule "AndroidTraining"]
+	path = AndroidTraining
+	url = https://github.com/mixi-inc/AndroidTraining
