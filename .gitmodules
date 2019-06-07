@@ -4,3 +4,18 @@
 [submodule "AndroidTraining"]
 	path = AndroidTraining
 	url = https://github.com/mixi-inc/AndroidTraining
+[submodule "codepath/android-animation-gestures-demo"]
+	path = codepath/android-animation-gestures-demo
+	url = https://github.com/codepath/android-animation-gestures-demo
+[submodule "codepath/android-drawable-animation-demo"]
+	path = codepath/android-drawable-animation-demo
+	url = https://github.com/codepath/android-drawable-animation-demo
+[submodule "codepath/android-drawable-styles-demo"]
+	path = codepath/android-drawable-styles-demo
+	url = https://github.com/codepath/android-drawable-styles-demo
+[submodule "codepath/android-custom-array-adapter-demo"]
+	path = codepath/android-custom-array-adapter-demo
+	url = https://github.com/codepath/android-custom-array-adapter-demo
+[submodule "codepath/android-custom-view-demos"]
+	path = codepath/android-custom-view-demos
+	url = https://github.com/codepath/android-custom-view-demos
