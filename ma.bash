@@ -8,5 +8,5 @@ shopt -s nullglob globstar
 cd "$JDR"
 # _AT_ username/repository commit
 _AT_ aporter/coursera-android 157373885fbfa18b83fa97cd46f6a003905970ea
-# _AT_ Frank-Zhu/coursera-android a4c1fceac0d2c0a86f74ebad8ccc7539330e8290
+_AT_ BullShark/AndroidTutorial f5b3ea08ab9dce1b78a67b71490dc45afe275199
 # ma.bash OEF 
