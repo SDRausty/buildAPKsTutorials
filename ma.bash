@@ -9,5 +9,6 @@ cd "$JDR"
 # _AT_ username/repository commit
 _AT_ aporter/coursera-android 157373885fbfa18b83fa97cd46f6a003905970ea
 _AT_ BullShark/AndroidTutorial f5b3ea08ab9dce1b78a67b71490dc45afe275199
+_AT_ Jaskirat/android-tutorial-samples 9b66c8731a8891768be32aeb1abf7af2227ba94a
 _AT_ stacktipslab/Advance-Android-Tutorials 518ab44f4a873a75bee8fe527951846e9d9fab7e
 # ma.bash OEF
